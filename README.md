@@ -1,6 +1,6 @@
 # WhatsApp Lead Automator 🚀
 
-Este projeto é um bot de automação em Python desenvolvido para facilitar o contato com leads provenientes de campanhas de tráfego pago (**Kwai Ads e TikTok Ads**). O script lê uma base de dados em Excel, realiza o tratamento dos números de telefone e automatiza o envio de mensagens personalizadas via WhatsApp Web.
+Este projeto é um bot de automação em Python desenvolvido para facilitar o contato com leads. O script lê uma base de dados em Excel, realiza o tratamento dos números de telefone e automatiza o envio de mensagens personalizadas via WhatsApp Web.
 
 ## 🛠️ Funcionalidades
 
