@@ -8,3 +8,4 @@ __pycache__/
 .vscode/
 venv/
 .env
+user_data_playwright/
