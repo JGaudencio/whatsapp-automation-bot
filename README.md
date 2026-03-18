@@ -16,7 +16,7 @@ Este projeto é um bot de automação em Python desenvolvido para facilitar o co
 
 Para que o bot funcione, certifique-se de que a planilha pública possua as seguintes colunas (não importando a ordem):
 
-- `fone`: Contendo os números de telefone.
+- `phone`: Contendo os números de telefone.
 - `status`: Para registrar ou verificar se o contato já recebeu a mensagem (opcional criar previamente, o script cria localmente se não existir).
 
 ## 🚀 Como Executar
