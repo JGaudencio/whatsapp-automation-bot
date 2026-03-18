@@ -37,6 +37,10 @@ def baixar_e_ler_planilha(diretorio):
                     df["status"] = ""
                 df["status"] = df["status"].astype("object")
                 
+                if "data" not in df.columns:
+                    df["data"] = ""
+                df["data"] = df["data"].astype("object")
+                
                 return df, arquivo_planilha_local
             except Exception as e:
                 print(f"\n❌ Erro ao ler planilha local: {e}")
@@ -81,12 +85,14 @@ def baixar_e_ler_planilha(diretorio):
             print("\n❌ ERRO: Coluna 'phone' não encontrada. Verifique o cabeçalho na sua planilha.")
             exit(1)
 
-        # Cria a coluna 'status' caso ela não exista na planilha
+        # Cria a coluna 'status' e 'data' caso elas não existam na planilha
         if "status" not in df.columns:
             df["status"] = ""
-            
-        # Força a coluna a ser do tipo object para aceitar strings e evitar TypeError com floats
         df["status"] = df["status"].astype("object")
+
+        if "data" not in df.columns:
+            df["data"] = ""
+        df["data"] = df["data"].astype("object")
 
         return df, arquivo_planilha_local
 

@@ -4,6 +4,7 @@ import urllib.parse
 from playwright.sync_api import sync_playwright
 import os
 import pandas as pd
+from datetime import datetime
 from utils import limpar_numero, obter_mensagem_por_horario
 
 def iniciar_disparos(df, arquivo_planilha_local, diretorio, limite_envios):
@@ -55,6 +56,7 @@ def iniciar_disparos(df, arquivo_planilha_local, diretorio, limite_envios):
                 tentar_enviar_mensagem(numero_final)
                 
                 df.at[index, "status"] = "enviado"
+                df.at[index, "data"] = datetime.now().strftime('%d/%m/%Y')
                 df.to_excel(arquivo_planilha_local, index=False)
 
                 envios_feitos += 1
@@ -72,6 +74,7 @@ def iniciar_disparos(df, arquivo_planilha_local, diretorio, limite_envios):
                         tentar_enviar_mensagem(numero_com_9)
                         
                         df.at[index, "status"] = "enviado"
+                        df.at[index, "data"] = datetime.now().strftime('%d/%m/%Y')
                         df.to_excel(arquivo_planilha_local, index=False)
                         
                         envios_feitos += 1
@@ -82,11 +85,13 @@ def iniciar_disparos(df, arquivo_planilha_local, diretorio, limite_envios):
                     except Exception as _e2:
                         print(f"❌ Erro definitivo. O número {numero_com_9} não está no WhatsApp.")
                         df.at[index, "status"] = "número não está no whatsapp"
+                        df.at[index, "data"] = datetime.now().strftime('%d/%m/%Y')
                         df.to_excel(arquivo_planilha_local, index=False)
                         time.sleep(5)
                 else:
                     print(f"❌ Erro. O número {numero_final} não está no WhatsApp.")
                     df.at[index, "status"] = "número não está no whatsapp"
+                    df.at[index, "data"] = datetime.now().strftime('%d/%m/%Y')
                     df.to_excel(arquivo_planilha_local, index=False)
                     time.sleep(5)
 
