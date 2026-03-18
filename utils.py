@@ -1,6 +1,7 @@
 import random
 from datetime import datetime
 
+
 def limpar_numero(num):
     """
     Limpa o número de telefone, removendo caracteres não numéricos.
@@ -13,6 +14,7 @@ def limpar_numero(num):
         num = "+" + num
     return num
 
+
 def obter_mensagem_por_horario():
     """
     Gera uma mensagem de saudação aleatória de acordo com a hora do dia.
@@ -20,20 +22,47 @@ def obter_mensagem_por_horario():
     """
     hora = datetime.now().hour
     if 5 <= hora < 12:
-        return random.choice([
-            "Bom dia!", "Oi, bom dia.", "Bom dia, tudo bem?", "Olá!", 
-            "Oi, tudo certo?", "Bom dia, como vai?", "Bom dia.", 
-            "Oi, consegue falar?", "Olá, bom dia!", "Bom dia, tudo ótimo?"
-        ])
+        return random.choice(
+            [
+                "Bom dia!",
+                "Oi, bom dia.",
+                "Bom dia, tudo bem?",
+                "Olá!",
+                "Oi, tudo certo?",
+                "Bom dia, como vai?",
+                "Bom dia.",
+                "Opa! Bom dia.",
+                "Olá, bom dia!",
+                "Bom dia, tudo ótimo?",
+            ]
+        )
     elif 12 <= hora < 18:
-        return random.choice([
-            "Boa tarde!", "Oi, boa tarde.", "Boa tarde, tudo bem?", "Olá!", 
-            "Oi, tudo certo?", "Boa tarde, como vai?", "Boa tarde.", 
-            "Oi, pode falar?", "Boa tarde, preciso de você.", "Olá, boa tarde!"
-        ])
+        return random.choice(
+            [
+                "Boa tarde!",
+                "Oi, boa tarde.",
+                "Boa tarde, tudo bem?",
+                "Olá!",
+                "Oi, tudo certo?",
+                "Boa tarde, como vai?",
+                "Boa tarde.",
+                "Oi, pode falar?",
+                "Opa! Boa tarde.",
+                "Olá, boa tarde!",
+            ]
+        )
     else:
-        return random.choice([
-            "Boa noite!", "Oi, boa noite.", "Boa noite, tudo bem?", "Olá!", 
-            "Oi, tudo certo?", "Boa noite, como vai?", "Boa noite.", 
-            "Oi, consegue falar?", "Boa noite, preciso falar com você.", "Olá, boa noite!"
-        ])
+        return random.choice(
+            [
+                "Boa noite!",
+                "Oi, boa noite.",
+                "Boa noite, tudo bem?",
+                "Olá!",
+                "Oi, tudo certo?",
+                "Boa noite, como vai?",
+                "Boa noite.",
+                "Oi, consegue falar?",
+                "Opa! Boa noite.",
+                "Olá, boa noite!",
+            ]
+        )
