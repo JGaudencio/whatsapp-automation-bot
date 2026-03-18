@@ -1,4 +1,4 @@
-pywhatkit
-pyautogui
+playwright
 pandas
 openpyxl
+requests

@@ -1,5 +1,5 @@
 # Ignorar arquivos de dados privados
-leads.xlsx
+*.xlsx
 *.csv
 
 
@@ -8,3 +8,4 @@ __pycache__/
 .vscode/
 venv/
 .env
+user_data_playwright/
